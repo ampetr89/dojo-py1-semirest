@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New User</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+	<header></header>
+	<article class='user'>
+		<h1>Create a new user</h1>
+		<form action='/users/create' method='POST'>
+			<p>First Name: <input type="text" name="first_name"> </p>
+			<p>Last Name: <input type="text" name="last_name"> </p>
+			<p>Email: <input type="text" name="email"> </p>
+			<p><input type="submit" value="Submit"></p>
+		</form>
+	</article>
+
+	<section class='controls'>
+		<a href="/users">Home</a>
+	</section>
+</body>
+</html>
