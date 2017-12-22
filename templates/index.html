@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users Index</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+
+<header></header>
+
+
+<article class='users'>
+	<h1>Users</h1>
+	<table>
+		<thead>
+			<th>id</th>
+			<th>Full Name</th>
+			<th>Email</th>
+			<th>Created At</th>
+			<th>Actions</th>
+		</thead>
+		<tbody>
+		{% for user in users %}
+			<tr>
+				<td>{{user['id']}}</td>
+				<td>{{user['first_name']}} {{user['last_name']}}</td>
+				<td>{{user['email']}}</td>
+				<td>{{user['created_at']}}</td>
+				<td>
+					<a href="/users/{{user['id']}}">Show</a>
+					<a href="/users/{{user['id']}}/edit">Edit</a>
+					<a href="/users/{{user['id']}}/destroy">Delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</article>
+<section class='controls'>
+	<a href="/users/new">Add a new user</a>
+</section>
+
+</body>
+</html>
