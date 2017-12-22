@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users Show</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+<header></header>
+<article class='user'>
+	<h1>User {{user['id']}}</h1>
+	<p>Full Name: {{user['first_name']}} {{user['last_name']}} </p>
+	<p>Email: {{user['email']}} </p>
+	<p>Created on: {{user['created_at']}}</p>
+</article>
+
+<section class='controls'>
+	<a href="/users/{{user['id']}}/edit">Edit</a> |
+	<a href="/users/{{user['id']}}/delete">Delete</a> | 
+	<a href="/users">Home</a>
+</section>
+</body>
+</html>
